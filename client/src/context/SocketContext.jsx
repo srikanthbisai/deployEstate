@@ -9,7 +9,7 @@ export const SocketContextProvider = ({ children }) => {
   const {currentUser} = useContext(AuthContext);
 
   useEffect(() => {
-    const newSocket = io("http://localhost:4000");
+    const newSocket = io("https://try2-socket.onrender.com");
     setSocket(newSocket);
 
     return () => newSocket.close();
