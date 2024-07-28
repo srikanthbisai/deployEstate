@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 dotenv.config();
 const io = new Server({
   cors: {
-    origin: process.env.CLIENT_URL // Adjust this if necessary
+    origin: process.env.CLIENT_URL 
   },
 });
 
