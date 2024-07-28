@@ -1,10 +1,11 @@
 import { Server } from "socket.io";
 import dotenv from "dotenv";
+import cors from "cors";
 
 dotenv.config();
 const io = new Server({
   cors: {
-    origin: process.env.CLIENT_URL 
+    origin: process.env.CLIENT_URL,
   },
 });
 
