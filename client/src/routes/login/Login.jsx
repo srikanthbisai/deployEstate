@@ -28,7 +28,7 @@ function Login() {
                 username,
                 password,
             }); 
-         updateUser(res.data);
+          updateUser(res.data);
           navigate("/");
         } catch(err) {
             console.log(err);
