@@ -21,7 +21,7 @@ useEffect(()=>{
 
   const handleOpenChat = async (id, receiver) => {
     try {
-      const res = await apiRequest("/chats/" + id);
+      const res = await apiRequest("/api/chats/" + id);
       setChat({ ...res.data, receiver });
       if(!res.data.seenBy.includes(currentUser.id))
       {
@@ -40,7 +40,7 @@ useEffect(()=>{
 
     if (!text) return;
     try {
-      const res = await apiRequest.post("/messages/" + chat.id, { text });
+      const res = await apiRequest.post("/api/messages/" + chat.id, { text });
       setChat((prev) => ({ ...prev, messages: [...prev.messages, res.data] }));
       e.target.reset();
       socket.emit("sendMessage", {
@@ -55,7 +55,7 @@ useEffect(()=>{
   useEffect(() => {
     const read = async () => {
       try {
-        await apiRequest.put("/chats/read/" + chat.id);
+        await apiRequest.put("/api/chats/read/" + chat.id);
       } catch (err) {
         console.log(err);
       }
