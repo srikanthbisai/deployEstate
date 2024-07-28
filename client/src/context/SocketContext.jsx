@@ -2,6 +2,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 import { io } from "socket.io-client";
 import { AuthContext } from "./AuthContext";
 
+
 export const SocketContext = createContext();
 
 export const SocketContextProvider = ({ children }) => {
@@ -9,7 +10,7 @@ export const SocketContextProvider = ({ children }) => {
   const {currentUser} = useContext(AuthContext);
 
   useEffect(() => {
-    const newSocket = io("https://try2-socket.onrender.com");
+    const newSocket = io(import.meta.env.VITE_SOCKET_URL);
     setSocket(newSocket);
 
     return () => newSocket.close();
