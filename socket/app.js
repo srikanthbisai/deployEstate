@@ -5,8 +5,9 @@ import cors from "cors";
 dotenv.config();
 const io = new Server({
  cors: {
-    origin: "https://deploy-estate.vercel.app", // Frontend URL
-    credentials: true,
+   origin: "https://deploy-estate.vercel.app",
+    methods: ["GET", "POST"],
+    credentials: true
   },
 });
 let onlineUser = [];
