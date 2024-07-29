@@ -10,7 +10,12 @@ export const SocketContextProvider = ({ children }) => {
   const {currentUser} = useContext(AuthContext);
 
   useEffect(() => {
-    const newSocket = io(import.meta.env.VITE_SOCKET_URL);
+    const newSocket = io(import.meta.env.VITE_SOCKET_URL, {
+      withCredentials: true,
+      extraHeaders: {
+        "Access-Control-Allow-Origin": import.meta.env.VITE_CLIENT_URL
+      }
+    });
     setSocket(newSocket);
 
     return () => newSocket.close();

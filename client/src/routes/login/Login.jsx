@@ -10,9 +10,6 @@ function Login() {
     const [isLoading, setIsLoading] = useState(false);
     const navigate = useNavigate();
     const {updateUser} = useContext(AuthContext);
-
-
-
     
     const handleSubmit = async(e) => {
         e.preventDefault();

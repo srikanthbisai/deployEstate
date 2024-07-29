@@ -6,9 +6,10 @@ dotenv.config();
 const io = new Server({
   cors: {
     origin: process.env.CLIENT_URL,
+    methods: ["GET", "POST"],
+    credentials: true
   },
 });
-
 let onlineUser = [];
 
 const addUser = (userId, socketId) => {
