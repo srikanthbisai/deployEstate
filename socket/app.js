@@ -4,10 +4,10 @@ import cors from "cors";
 
 dotenv.config();
 const io = new Server({
-  cors: {
-    origin: process.env.CLIENT_URL,
+ cors: {
+    origin: "https://deploy-estate.vercel.app", // Frontend URL
     methods: ["GET", "POST"],
-    credentials: true
+    credentials: true,
   },
 });
 let onlineUser = [];
