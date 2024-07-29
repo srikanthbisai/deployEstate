@@ -6,7 +6,6 @@ dotenv.config();
 const io = new Server({
  cors: {
     origin: "https://deploy-estate.vercel.app", // Frontend URL
-    methods:  ["GET", "POST", "PUT", "DELETE"]
     credentials: true,
   },
 });
