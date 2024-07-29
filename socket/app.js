@@ -7,7 +7,7 @@ const io = new Server({
  cors: {
    origin: "https://deploy-estate.vercel.app",
     methods: ["GET", "POST"],
-    credentials: true
+    credentials: true,
   },
 });
 let onlineUser = [];
